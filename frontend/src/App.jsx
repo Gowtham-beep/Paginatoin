@@ -10,7 +10,7 @@ function App() {
     if(loading|| !hasMore) return
     setLoading(true)
 
-    let url=`http://localhost:3000/api/gettasks`
+    let url=`https://paginatoin.onrender.com/api/gettasks`
     if(cursor!==null) url+=`/?cursor=${cursor}`
 
     const response=await fetch(url)
