@@ -1,8 +1,18 @@
-# React + Vite
+Frontend - React
+Infinite Scroll with Cursor Pagination
+The frontend initially fetches a limited number of tasks.
+As the user scrolls down, a new request is sent with the cursor to load more tasks.
+When no more tasks are available, further requests stop automatically.
+Implementation Steps
+Fetch tasks from the backend using a cursor.
+Append new tasks to the existing list.
+Update the cursor to request the next batch.
+Detect scroll position and load more tasks dynamically.
+Example Infinite Scroll Handling in React:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```
+const handleScroll = () => {
+  if (window.innerHeight + document.documentElement.scrollTop >= document.documentElement.offsetHeight - 10) {
+    fetchTasks();
+  }
+};```
