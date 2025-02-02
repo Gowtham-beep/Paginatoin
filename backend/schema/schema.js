@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const schema= mongoose.schema
+const schema= mongoose.Schema
 
 const taskSchema=new schema({
     name:{
@@ -18,6 +18,6 @@ const taskSchema=new schema({
 
 })
 
-const Tasks= mongoose.model("taskSchema",Tasks)
+const Tasks= mongoose.model("taskSchema",taskSchema)
 
 export default Tasks
